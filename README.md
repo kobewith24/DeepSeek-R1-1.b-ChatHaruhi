@@ -2,6 +2,8 @@
 
 > 仿照「基于 Qwen-3 的垂域大模型高效微调」项目思路，在 **Windows 单机（RTX 4060 Laptop 8GB）** 上复现垂域大模型高效微调全流程：
 > 数据构建 → QLoRA 高效微调 → 权重合并 → Ollama 部署 → 对比评测与压测。
+>
+> 参考教程：[B 站《4小时打造垂域专属大模型，Qwen3企业级微调实战》(BV1YLE1zyEvX)](https://www.bilibili.com/video/BV1YLE1zyEvX/)（UP：九天Hector）
 
 ## 项目简介
 
@@ -134,3 +136,24 @@ ollama run deepseek-r1-roleplay
 
 - [ChatHaruhi-54K-Role-Playing-Dialogue](https://huggingface.co/datasets/silk-road/ChatHaruhi-54K-Role-Playing-Dialogue)：54K 角色扮演对话（凉宫春日、御坂美琴等 32 个经典角色），CC-BY-4.0
 - [FineTome-100k](https://huggingface.co/datasets/mlabonne/FineTome-100k)：通用对话，用于防止灾难性遗忘
+
+## 参考
+
+本项目流程仿照 B 站视频教程《4小时打造垂域专属大模型，Qwen3企业级微调实战》（UP：九天Hector，13 集 / 约 3.4 小时）：
+
+- 视频地址：<https://www.bilibili.com/video/BV1YLE1zyEvX/>
+
+教程与本项目的对应关系：
+
+| 教程章节 | 本项目中的对应实现 |
+|---|---|
+| 4. 如何构造微调数据集（原理篇） | `data/build_dataset.py`：垂域数据 + 通用数据混合配比 |
+| 6. EvalScope 与 wandb 部署流程 | `eval/` 下的 EvalScope 评测与报告 |
+| 7. / 10. 混合推理数据集准备与选取 | ChatHaruhi-54K + FineTome-100k 的 25%/75% 混合 |
+| 9. / 11. 数据集创建与清洗流程 | `build_dataset.py` 中的对话格式转换与模板套用 |
+| 12. 完整微调流程详解 | `train/finetune.py`：4bit QLoRA + LoRA 注入 + SFT |
+| 13. 微调结果对比与经验讲解 | `eval/reports/compare_report.md` 与压测结果 |
+
+差异说明：教程使用 Qwen3-14B + Unsloth + vLLM（Linux 服务器），本项目在 Windows 单机 8GB 显存上改为
+DeepSeek-R1-Distill-Qwen-1.5B + PEFT/TRL + Ollama，QLoRA 核心路线保持一致。
+
