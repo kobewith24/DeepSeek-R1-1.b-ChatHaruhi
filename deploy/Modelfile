@@ -1,0 +1,10 @@
+# Ollama Modelfile：导入转换后的 GGUF 权重（无强制思考的对话模板）
+# 用法：ollama create deepseek-r1-roleplay -f deploy/Modelfile
+# 说明：微调数据为直接回复（无 <think> 推理段），因此模板不强制注入 <think>，
+#       以保证对话内容直接输出到 content 字段；如需思考模式可另建带 think 的模型。
+FROM ../weights/deepseek-r1-1.5b-roleplay-f16.gguf
+
+TEMPLATE """<｜begin▁of▁sentence｜>{{ if .System }}{{ .System }}{{ end }}{{ range .Messages }}{{ if eq .Role "user" }}<｜User｜>{{ .Content }}{{ else if eq .Role "assistant" }}<｜Assistant｜>{{ .Content }}<｜end▁of▁sentence｜>{{ end }}{{ end }}<｜Assistant｜>"""
+
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95

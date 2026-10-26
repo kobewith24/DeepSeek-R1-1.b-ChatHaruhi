@@ -1,0 +1,18 @@
+# 环境与缓存
+.venv/
+__pycache__/
+*.pyc
+*.log
+
+# 大文件（权重/数据集/第三方源码，按 README 说明复现）
+model/
+weights/DeepSeek-R1-1.5B-roleplay-fp16/
+weights/*.gguf
+data/cleaned_roleplay_dataset/
+deploy/llama.cpp/
+deploy/*.zip
+train/checkpoints/
+
+# 系统
+.DS_Store
+Thumbs.db
