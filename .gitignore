@@ -33,3 +33,6 @@ eval/dashboard_outputs/**/*.rerun-*
 # 未完成的 MMLU 评测残留
 eval/dashboard_outputs/*_mmlu/
 
+
+# 旧虚拟环境备份（基础运行时损坏后重建）.venv_broken/
+
