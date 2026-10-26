@@ -29,3 +29,7 @@ eval/dashboard_outputs/*/predictions/
 eval/dashboard_outputs/*/reviews/
 eval/dashboard_outputs/**/*.rerun-*
 
+
+# 未完成的 MMLU 评测残留
+eval/dashboard_outputs/*_mmlu/
+
