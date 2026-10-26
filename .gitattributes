@@ -1,0 +1,3 @@
+﻿# EvalScope 自动生成的 HTML 报告属于生成物，不计入语言统计
+*.html linguist-generated=true
+eval/**/report.html linguist-generated=true linguist-vendored=true
