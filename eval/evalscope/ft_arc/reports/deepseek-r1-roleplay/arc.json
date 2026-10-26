@@ -1,0 +1,245 @@
+{
+    "schema_version": 2,
+    "name": "deepseek-r1-roleplay@arc",
+    "dataset_name": "arc",
+    "dataset_pretty_name": "ARC",
+    "dataset_description": "\n## Overview\n\nARC (AI2 Reasoning Challenge) is a benchmark designed to evaluate science question answering capabilities of AI models. It consists of multiple-choice science questions from grade 3 to grade 9, divided into an Easy set and a Challenge set based on difficulty.\n\n## Task Description\n\n- **Task Type**: Multiple-Choice Science Question Answering\n- **Input**: Science question with 3-5 answer choices\n- **Output**: Correct answer letter (A, B, C, D, or E)\n- **Difficulty Levels**: ARC-Easy and ARC-Challenge\n\n## Key Features\n\n- 7,787 science questions from standardized tests (grades 3-9)\n- ARC-Easy: Questions answerable by retrieval or word co-occurrence\n- ARC-Challenge: Questions requiring deeper reasoning\n- Questions cover physics, chemistry, biology, and earth science\n- Designed to test both factual knowledge and reasoning\n\n## Evaluation Notes\n\n- Default configuration uses **0-shot** evaluation\n- Two subsets available: `ARC-Easy` and `ARC-Challenge`\n- Challenge set is commonly used for leaderboard comparisons\n- Supports few-shot evaluation with train split examples\n",
+    "model_name": "deepseek-r1-roleplay",
+    "metrics": [
+        {
+            "identity": {
+                "name": "accuracy",
+                "aggregation": "mean",
+                "dimensions": {}
+            },
+            "legacy_name": null,
+            "num": 20,
+            "score": 0.35,
+            "macro_score": 0.35,
+            "categories": [
+                {
+                    "name": [
+                        "default"
+                    ],
+                    "num": 20,
+                    "score": 0.35,
+                    "macro_score": 0.35,
+                    "subsets": [
+                        {
+                            "name": "ARC-Easy",
+                            "score": 0.3,
+                            "num": 10,
+                            "metadata": null,
+                            "is_aggregate": false
+                        },
+                        {
+                            "name": "ARC-Challenge",
+                            "score": 0.4,
+                            "num": 10,
+                            "metadata": null,
+                            "is_aggregate": false
+                        }
+                    ]
+                }
+            ],
+            "semantics": {
+                "semantic_id": "quality.accuracy.ratio",
+                "metric_name": "Accuracy",
+                "display_name": null,
+                "kind": "quality",
+                "direction": "higher_is_better",
+                "raw_unit": null,
+                "value_range": {
+                    "min": 0.0,
+                    "max": 1.0
+                },
+                "display_kind": "percent",
+                "display_multiplier": 100.0,
+                "display_unit": "%",
+                "display_precision": 1
+            }
+        }
+    ],
+    "analysis": "N/A",
+    "perf_metrics": {
+        "summary": {
+            "n_samples": 20,
+            "latency": {
+                "mean": 19.93975,
+                "std": 5.911969,
+                "min": 5.344,
+                "25%": 18.60925,
+                "50%": 21.773,
+                "75%": 24.17125,
+                "90%": 24.6359,
+                "99%": 25.83983,
+                "max": 26.0
+            },
+            "throughput": {
+                "avg_output_tps": 9.45,
+                "avg_req_ps": 0.0502
+            },
+            "usage": {
+                "input_tokens": {
+                    "mean": 112.15,
+                    "std": 26.067271,
+                    "min": 71.0,
+                    "25%": 92.75,
+                    "50%": 110.5,
+                    "75%": 126.5,
+                    "90%": 153.1,
+                    "99%": 156.43,
+                    "max": 157.0
+                },
+                "output_tokens": {
+                    "mean": 188.5,
+                    "std": 84.384147,
+                    "min": 15.0,
+                    "25%": 128.75,
+                    "50%": 207.5,
+                    "75%": 243.25,
+                    "90%": 286.5,
+                    "99%": 316.29,
+                    "max": 318.0
+                },
+                "total_tokens": {
+                    "mean": 300.65,
+                    "std": 94.114306,
+                    "min": 126.0,
+                    "25%": 242.0,
+                    "50%": 323.0,
+                    "75%": 345.75,
+                    "90%": 413.7,
+                    "99%": 464.73,
+                    "max": 471.0
+                },
+                "total_input_tokens": 2243,
+                "total_output_tokens": 3770,
+                "total_tokens_count": 6013
+            }
+        },
+        "coverage": {
+            "requests_with_metrics": 20,
+            "total_requests": 20
+        },
+        "metric_semantics": {
+            "n_samples": {
+                "semantic_id": "diagnostic.count.items",
+                "metric_name": "Samples",
+                "display_name": null,
+                "kind": "diagnostic",
+                "direction": "none",
+                "raw_unit": null,
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": null,
+                "display_precision": 0
+            },
+            "latency": {
+                "semantic_id": "perf.latency.seconds",
+                "metric_name": "Latency",
+                "display_name": null,
+                "kind": "quality",
+                "direction": "lower_is_better",
+                "raw_unit": "s",
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": "s",
+                "display_precision": 3
+            },
+            "throughput.avg_output_tps": {
+                "semantic_id": "perf.throughput.tokens_per_second",
+                "metric_name": "Output Throughput",
+                "display_name": null,
+                "kind": "quality",
+                "direction": "higher_is_better",
+                "raw_unit": "tok/s",
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": "tok/s",
+                "display_precision": 2
+            },
+            "throughput.avg_req_ps": {
+                "semantic_id": "perf.throughput.requests_per_second",
+                "metric_name": "Request Throughput",
+                "display_name": null,
+                "kind": "quality",
+                "direction": "higher_is_better",
+                "raw_unit": "req/s",
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": "req/s",
+                "display_precision": 2
+            },
+            "usage.input_tokens": {
+                "semantic_id": "diagnostic.count.items",
+                "metric_name": "Input Tokens",
+                "display_name": null,
+                "kind": "diagnostic",
+                "direction": "none",
+                "raw_unit": null,
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": null,
+                "display_precision": 0
+            },
+            "usage.output_tokens": {
+                "semantic_id": "diagnostic.count.items",
+                "metric_name": "Output Tokens",
+                "display_name": null,
+                "kind": "diagnostic",
+                "direction": "none",
+                "raw_unit": null,
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": null,
+                "display_precision": 0
+            },
+            "usage.total_tokens": {
+                "semantic_id": "diagnostic.count.items",
+                "metric_name": "Total Tokens",
+                "display_name": null,
+                "kind": "diagnostic",
+                "direction": "none",
+                "raw_unit": null,
+                "value_range": null,
+                "display_kind": "number",
+                "display_multiplier": null,
+                "display_unit": null,
+                "display_precision": 0
+            }
+        }
+    },
+    "primary_metric_identity": {
+        "name": "accuracy",
+        "aggregation": "mean",
+        "dimensions": {}
+    },
+    "primary_metric_unavailable_reason": null,
+    "judge_summary": null,
+    "execution_summary": {
+        "requested": 20,
+        "succeeded": 20,
+        "errored": 0,
+        "incomplete": false,
+        "subsets": {
+            "ARC-Easy": {
+                "requested": 10,
+                "succeeded": 10,
+                "errored": 0
+            },
+            "ARC-Challenge": {
+                "requested": 10,
+                "succeeded": 10,
+                "errored": 0
+            }
+        }
+    },
+    "num": 20
+}

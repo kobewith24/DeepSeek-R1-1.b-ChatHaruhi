@@ -1,0 +1,100 @@
+agent_config: null
+analysis_report: false
+api_key: '**********'
+api_url: http://localhost:11434/v1
+chat_template: null
+collect_perf: true
+dataset_args: {}
+dataset_dir: C:\Users\Wang Quan/.cache/modelscope/hub\datasets
+dataset_hub: modelscope
+datasets:
+- arc
+debug: false
+enable_progress_tracker: false
+eval_backend: Native
+eval_batch_size: 8
+eval_config: null
+eval_type: openai_api
+evalscope_version: 1.14.0
+evaluation_identity:
+  benchmarks:
+    arc:
+      cache_source: null
+      evaluation_version: v1.0
+      fingerprint: sha256:596ef09704cd1e04dd1946de2b7efcae239c8c95ce7f7e5c2a585073524f9912
+  schema_version: 1
+generation_config:
+  batch_size: 8
+  max_tokens: 1024
+  timeout: 300.0
+ignore_errors: false
+judge:
+  aggregation: mean
+  contract:
+    prompt_template: null
+    score_mapping: null
+    score_type: pattern
+    system_prompt: null
+  min_valid_judges: 1
+  models: []
+  position_swap: auto
+  repeats: 1
+  strategy: auto
+limit: 10
+model: deepseek-r1-roleplay
+model_args: {}
+model_id: deepseek-r1-roleplay
+model_task: text_generation
+no_timestamp: true
+repeats: 1
+rerun_review: false
+resolved_benchmarks:
+  arc:
+    aggregation: mean
+    dataset_hub: modelscope
+    dataset_id: allenai/ai2_arc
+    dataset_revision: null
+    default_subset: default
+    eval_split: test
+    extra_params: {}
+    few_shot_num: 0
+    few_shot_prompt_template: null
+    few_shot_random: false
+    filters: null
+    max_image_bytes: null
+    metric_list:
+    - accuracy
+    name: arc
+    primary_metric: null
+    prompt_template: 'Answer the following multiple choice question. The entire content
+      of your response should be of the following format: ''ANSWER: [LETTER]'' (without
+      quotes) where [LETTER] is one of {letters}.
+
+
+      {question}
+
+
+      {choices}'
+    query_template: null
+    sandbox_config: {}
+    shuffle: false
+    shuffle_choices: false
+    subset_list:
+    - ARC-Easy
+    - ARC-Challenge
+    system_prompt: null
+    train_split: train
+sandbox:
+  default_config: {}
+  enabled: false
+  engine: docker
+  manager_config: {}
+  pool_size: null
+sandbox_manager_config: {}
+sandbox_type: docker
+seed: 42
+stream: null
+timeout: 300.0
+use_cache: null
+use_sandbox: false
+work_dir: D:\DeepSeek-R1-FT\eval\evalscope\ft_arc

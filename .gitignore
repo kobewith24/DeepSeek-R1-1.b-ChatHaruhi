@@ -16,3 +16,10 @@ train/checkpoints/
 # 系统
 .DS_Store
 Thumbs.db
+
+# 评测测试残留
+eval/evalscope/_test*/
+eval/evalscope/*_mmlu/
+
+eval/evalscope/*/predictions/
+eval/evalscope/*/reviews/
