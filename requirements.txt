@@ -12,5 +12,8 @@ modelscope
 # GGUF 转换（可选，Ollama 可直接导入 safetensors）
 gguf
 # 评测与压测
+evalscope
 openai
 requests
+# 评测报告截图（eval/shot_dashboard.py 用无头浏览器）
+playwright

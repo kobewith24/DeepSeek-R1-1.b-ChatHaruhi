@@ -49,30 +49,32 @@ DeepSeek-R1-FT/
 ## 复现步骤
 
 ```powershell
-# 1. 创建环境（Python 3.12）
-python -m venv .venv
-.venv\Scripts\python -m pip install -r requirements.txt
-# torch 需 CUDA 版：
-.venv\Scripts\python -m pip install --index-url https://mirrors.aliyun.com/pytorch-wheels/cu128 torch
+# 1. 创建 conda 环境（Python 3.12，环境名 deepseek）
+conda create -n deepseek python=3.12 -y
+conda activate deepseek
+
+# 安装依赖（torch 需 CUDA 版，从 PyTorch 官方源装）
+pip install -r requirements.txt
+pip install --index-url https://download.pytorch.org/whl/cu128 torch
 
 # 2. 下载基座模型（约 3.4GB，ModelScope 国内源）
-.venv\Scripts\python -c "from modelscope import snapshot_download; snapshot_download('deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B', local_dir=r'model/DeepSeek-R1-Distill-Qwen-1.5B')"
+python -c "from modelscope import snapshot_download; snapshot_download('deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B', local_dir=r'model/DeepSeek-R1-Distill-Qwen-1.5B')"
 
 # 3. 构建混合数据集（25% 角色扮演 + 75% 通用对话）
-.venv\Scripts\python data\build_dataset.py
+python data\build_dataset.py
 
 # 4. QLoRA 微调
-.venv\Scripts\python train\finetune.py
+python train\finetune.py
 
 # 5. 合并权重
-.venv\Scripts\python train\merge.py
+python train\merge.py
 
 # 6. 导入 Ollama
 ollama create deepseek-r1-roleplay -f deploy/Modelfile
 
 # 7. 对比评测 + 压测
-.venv\Scripts\python eval\eval_compare.py
-.venv\Scripts\python eval\benchmark.py
+python eval\eval_compare.py
+python eval\benchmark.py
 ```
 
 ## 实验结果
