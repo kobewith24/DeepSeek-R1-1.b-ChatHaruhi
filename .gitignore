@@ -23,3 +23,9 @@ eval/evalscope/*_mmlu/
 
 eval/evalscope/*/predictions/
 eval/evalscope/*/reviews/
+
+# 报告目录中的预测/复审细目录（保留 reports 与 report.html）
+eval/dashboard_outputs/*/predictions/
+eval/dashboard_outputs/*/reviews/
+eval/dashboard_outputs/**/*.rerun-*
+

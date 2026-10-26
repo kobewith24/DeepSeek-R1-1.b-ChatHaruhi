@@ -36,7 +36,9 @@ DeepSeek-R1-FT/
 ├─ eval/
 │  ├─ eval_compare.py              # 微调前后对比评测（角色扮演 + 通用防遗忘）
 │  ├─ benchmark.py                 # 20 次请求压测（成功率 + tok/s）
-│  ├─ make_dashboard.py            # EvalScope 成绩仪表盘（环状图）生成
+│  ├─ make_dashboard.py            # （旧）matplotlib 仪表盘脚本，已被 EvalScope 原生报告替代
+│  ├─ shot_dashboard.py            # 截取 EvalScope report.html 环图并拼成对比图
+│  ├─ dashboard_outputs/           # EvalScope 报告目录（含自动生成的 report.html）
 │  ├─ evalscope/                   # EvalScope 评测原始报告
 │  └─ reports/                     # 对比报告、压测结果、dashboard.png
 └─ requirements.txt
@@ -103,8 +105,10 @@ ollama create deepseek-r1-roleplay -f deploy/Modelfile
 | GSM8K（数学推理） | 20% | **60%** |
 | ARC（常识推理） | 30% | 35% |
 
-> 用 EvalScope（openai_api 模式）直连 Ollama 服务评测，每个数据集 10 条样本（limit=10，max_tokens=1024），
-> 分数为主指标 Accuracy。原始报告在 `eval/evalscope/*/reports/`，仪表盘由 `eval/make_dashboard.py` 生成。
+> 评测方式：EvalScope 1.14（`openai_api` 模式）直连 Ollama 服务，每个数据集 10 条样本（limit=10，max_tokens=1024），
+> 分数为主指标 Accuracy。上面两张环图（sunburst）是 **EvalScope 自动生成的评估报告**
+> （`eval/dashboard_outputs/combined_*/reports/report.html` 中的 SCORE DISTRIBUTION 图表），
+> 由 `eval/shot_dashboard.py` 用无头浏览器截取左右拼接，颜色随分数红→黄→绿变化。
 
 ### 压测（详见 `eval/reports/benchmark.json`）
 
