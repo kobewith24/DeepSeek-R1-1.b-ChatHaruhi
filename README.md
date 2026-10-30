@@ -40,6 +40,9 @@ DeepSeek-R1-FT/
 │  ├─ benchmark.py                 # 20 次请求压测（成功率 + tok/s）
 │  ├─ make_dashboard.py            # （旧）matplotlib 仪表盘脚本，已被 EvalScope 原生报告替代
 │  ├─ shot_dashboard.py            # 截取 EvalScope report.html 环图并拼成对比图
+│  ├─ judge_roleplay.py            # 角色扮演 LLM-as-a-Judge 评测（A/B 盲评 + 交换顺序）
+│  ├─ roleplay_testset.json        # 30 条角色扮演测试集（6 角色 × 5 类问题）
+│  ├─ roleplay/                    # 裁判评测的原始回答与评分
 │  ├─ dashboard_outputs/           # EvalScope 报告目录（含自动生成的 report.html）
 │  ├─ evalscope/                   # EvalScope 评测原始报告
 │  └─ reports/                     # 对比报告、压测结果、dashboard.png
@@ -113,6 +116,33 @@ python eval\benchmark.py
 > 分数为主指标 Accuracy。上面两张环图（sunburst）是 **EvalScope 自动生成的评估报告**
 > （`eval/dashboard_outputs/combined_*/reports/report.html` 中的 SCORE DISTRIBUTION 图表），
 > 由 `eval/shot_dashboard.py` 用无头浏览器截取左右拼接，颜色随分数红→黄→绿变化。
+
+### 角色扮演评测（LLM-as-a-Judge）
+
+开放生成没有标准答案，这里用「裁判模型打分」来量化：裁判为 **DeepSeek-V4.1-Flash（`deepseek-flash`）**，
+A/B 盲评并**交换顺序各评一次**消除位置偏差，temperature=0，30 条测试集（6 角色 × 5 类问题：
+日常 / 角色知识 / 情绪冲突 / 出戏诱导 / 价值观）。
+
+| 结果 | 数量 |
+|---|---|
+| 微调胜 | **25** |
+| 基座胜 | 1 |
+| 平局 | 0 |
+| 两次顺序矛盾（判为不稳定） | 4 |
+| **微调胜率** | **83.3%**（25/30） |
+
+| 维度（1~5 分） | 基座 | 微调 |
+|---|---|---|
+| 角色一致性 | 1.08 | **2.12** |
+| 沉浸度（不出戏） | 1.28 | **3.22** |
+| 回答质量 | 1.28 | **2.22** |
+
+按问题类型看，微调在 5 类场景全部占优（出戏诱导类最明显：基座会直接承认是 AI 或拒答）。
+
+> 测试集与脚本：`eval/roleplay_testset.json`、`eval/judge_roleplay.py`（原始回答与评分在 `eval/roleplay/`）。
+> **局限性**：裁判属于同家族模型，可能偏袒同系列回答；样本仅 30 条；有 4 条出现"换顺序就改判"。
+> 另外分数只能说明"相对变好"，微调的绝对质量仍有限（回答偶有复读问题、口癖不完整），
+> 角色一致性 2.12 分、质量 2.22 分说明离可用角色扮演还有明显距离。
 
 ### 压测（详见 `eval/reports/benchmark.json`）
 

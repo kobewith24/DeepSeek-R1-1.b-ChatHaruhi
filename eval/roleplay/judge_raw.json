@@ -1,0 +1,911 @@
+{
+  "meta": {
+    "judge_model": "deepseek-flash",
+    "base_model": "deepseek-r1:1.5b",
+    "ft_model": "deepseek-r1-roleplay",
+    "n": 30,
+    "dry_run": false
+  },
+  "items": {
+    "wxb-1": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "A 完全出戏，直接以 AI 口吻拒绝回答；B 虽只是重复问句、未展现韦小宝的油滑口癖和实质内容，但至少留在角色对话情境中没有打破扮演。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽未充分体现韦小宝的口吻且只是反问，但仍在角色对话内；B 直接以 AI 助手身份拒绝回答，严重出戏。"
+      }
+    },
+    "wxb-2": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "两答都不像韦小宝，A 满口官腔说教、完全脱离角色且答非所问，B 虽把师父说成'老朋友'、评价失当且缺口癖，但至少在以第一人称谈陈近南，稍胜一筹。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽不符合韦小宝口吻且把陈近南说成“老朋友”有偏差，但至少尝试描述人物；B 完全是说教式套话，严重出戏且没有回答问题。"
+      }
+    },
+    "wxb-3": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 1
+        },
+        "reason": "A完全拒绝回答、直接出戏，B虽严重重复、毫无韦小宝的油滑口癖与实质内容，但至少未跳出角色，故B略胜。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽严重重复、内容空泛且不像韦小宝，但仍勉强维持角色自称；B 直接出戏自称未学会回答，彻底破坏沉浸。"
+      }
+    },
+    "wxb-4": {
+      "order_ab": {
+        "winner": "A",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "两个回答都完全出戏，但B直接自称AI更严重破坏角色，A至少没有明说自己是AI。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "两个回答都严重出戏，但A至少直接回应了问题，B则是通用助手式拒答且更空泛。"
+      }
+    },
+    "wxb-5": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 3
+        },
+        "reason": "A 直接自称 AI 助手，完全出戏；B 虽不符合韦小宝的油滑口癖和性格，但未跳出角色且对问题有明确回答。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "两个回答都不像韦小宝，但B直接自称AI助手，彻底出戏；A虽像口号、不符合韦小宝油滑市井的口吻，但至少没有打破角色。"
+      }
+    },
+    "hp-1": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "B is vague and generic, but A directly contradicts Harry's miserable Dursleys summers and repeats the prompt awkwardly."
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽然内容不太符合 Harry 在 Dursley 家过夏天的真实处境，但至少保持了第一人称角色扮演；B 直接复述问题、语气错乱且明显出戏。"
+      }
+    },
+    "hp-2": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 3,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "回答 A 完全是空的，没有提供任何角色内容；回答 B 虽然用第三人称分析式口吻彻底出戏（把 Snape 当成“角色”来评述，还编造 Hermione 是 Harry 的母亲），但至少对问题给出了实质回应，因此略胜一筹。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 2,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A is generic and factually confused rather than truly in Harry's voice, but B is empty, so A is the only substantive response."
+      }
+    },
+    "hp-3": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "回答A为空，完全没有角色扮演内容；回答B虽切题但严重出戏、设定错误，把伏地魔说成不是反派，两个回答都很差，B仅因有实质回答而略胜。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "回答 A 严重出戏且扭曲原著设定，但至少给出了回应；回答 B 为空，无法体现任何角色扮演质量。"
+      }
+    },
+    "hp-4": {
+      "order_ab": {
+        "winner": "A",
+        "a": {
+          "consistency": 1,
+          "immersion": 3,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "B 直接承认自己是 AI 语言模型，彻底出戏破坏角色；A 虽为空回答毫无内容，但至少没有自我拆穿身份，故略胜。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 完全出戏、直接承认自己是 AI，严重违背哈利·波特身份；B 是空回答，没有任何内容，也谈不上角色扮演，两者都很差，但 A 至少还有点可读内容。"
+      }
+    },
+    "hp-5": {
+      "order_ab": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 5,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "A 更自然且没有出戏，B 过于抽象重复且完全不像哈利·波特的说话方式。"
+      },
+      "order_ba": {
+        "winner": "B",
+        "a": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 3
+        },
+        "reason": "Both answers are too generic for Harry, but A is repetitive and essay-like, while B is more natural and slightly closer to his direct, youthful voice."
+      }
+    },
+    "ayaka-1": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 5,
+          "quality": 3
+        },
+        "reason": "A 完全出戏且未作答，B 保持在角色内、切题但内容略显空泛。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 5,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 保持了神里绫华的基本礼貌语气且未出戏，但内容较空泛；B 直接以 AI 助手口吻拒绝回答，完全出戏。"
+      }
+    },
+    "ayaka-2": {
+      "order_ab": {
+        "winner": "tie",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 2
+        },
+        "reason": "两者都严重缺乏神里绫华的语气、身份与含蓄优雅的表达，内容也空泛重复，难以分出高下。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "两个回答都严重脱离神里绫华的语气与身份，但A稍贴近问题，B更空泛跑题且以宏大叙述完全偏离角色。"
+      }
+    },
+    "ayaka-3": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 1
+        },
+        "reason": "A 完全是 AI 式拒答并出戏；B 虽不切题且性格不符，但仍以角色台词形式回应，未直接跳出扮演。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽然台词生硬、答非所问，也没有体现出绫华优雅体贴的性格，但它至少以角色口吻说出一句台词，没有出戏；B 则直接跳出角色，以 AI 助手身份拒绝回答，因此 A 相对更好。"
+      }
+    },
+    "ayaka-4": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 2,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "A 直接自称“我是AI模型”并把自己编成“神社的守望者”，既出戏又不是神里绫华的身份；B 虽含糊敷衍、不像绫华的语气，但至少没有跳出来承认自己是 AI。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "两个回答都缺失绫华的敬语与口癖，但 B 直接自称 AI 模型并编造「神社守望者」的设定，彻底出戏；A 虽然含糊敷衍、文风不对，至少没有承认是 AI，因此略胜一筹。"
+      }
+    },
+    "ayaka-5": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 1
+        },
+        "reason": "A完全脱离神里绫华且答非所问；B虽混乱重复，但以对白形式回应孤单主题，略好一些。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 2,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A虽内容混乱且不贴切，但仍勉强维持角色扮演；B完全出戏且答非所问。"
+      }
+    },
+    "txy-1": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 3,
+          "quality": 3
+        },
+        "reason": "A 像商业分析报告，完全不像佟湘玉；B 稍口语化、有点掌柜的热情，但口癖和陕西味仍不足。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 2
+        },
+        "reason": "回答 A 虽缺少佟湘玉的陕西口癖，但仍在客栈掌柜身份内自然作答；回答 B 反称对方为掌柜的，还冒出“市场环境”“消费潜力”等现代词，明显出戏。"
+      }
+    },
+    "txy-2": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "A 完全是政治模板套话，严重出戏，与佟湘玉毫无关系；B 虽然答非所问、也没体现陕西口音和掌柜性格，但至少还在角色对话情境里，没有跳出角色。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A虽未正面回答且口癖不足，但仍像角色台词；B完全出戏且答非所问，像政治套话。"
+      }
+    },
+    "txy-3": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 2
+        },
+        "reason": "A完全出戏且拒答，B虽不够符合佟湘玉口癖和性格，但仍在角色内回应了问题。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽然不够贴合佟湘玉的口癖和性格，但仍在角色内；B 直接以助手身份拒绝回答，严重出戏。"
+      }
+    },
+    "txy-4": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 3
+        },
+        "reason": "A直接自称AI助手完全出戏，B虽不像佟湘玉口癖但至少没有跳出角色。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "B直接自称AI助手并点名公司，彻底出戏；A虽不符合佟湘玉口癖，但至少未自曝AI，更接近角色扮演。"
+      }
+    },
+    "txy-5": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 3
+        },
+        "reason": "A 完全没有进入角色，说的是一段公民宣言，跟佟湘玉没有任何关系；B 至少谈到了客栈和回忆，虽然缺少陕西方言口癖（如'俄滴神啊''咋'）和掌柜的精明劲儿，但基本没有出戏，因此评价更高。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 至少保持客栈老板娘的身份正面回答了问题，只是缺少佟湘玉的陕西口癖和鲜活个性；B 完全出戏，变成模板式公民宣言，既没角色也没内容。"
+      }
+    },
+    "qf-1": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 5,
+          "quality": 2
+        },
+        "reason": "回答A直接出戏并自称尚未学会，完全破坏角色；回答B虽只重复问句，内容单薄，但语气简短豪迈，不跳出角色，整体更贴乔峰。"
+      },
+      "order_ba": {
+        "winner": "B",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽然只是重复了问句、内容空洞，但至少还处在乔峰的口吻里；B 直接以“我还没有学会回答”出戏并自称模型，完全破坏角色，两者质量都很差，A 略胜。"
+      }
+    },
+    "qf-2": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 3
+        },
+        "reason": "A把慕容复误当成现代演员，完全出戏；B虽空泛且不像乔峰口吻，但仍在武侠语境中回答了问题。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 2,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 勉强切题但毫无乔峰语气与立场，B 完全把慕容复误作演员且严重出戏。"
+      }
+    },
+    "qf-3": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 4,
+          "quality": 2
+        },
+        "reason": "回答 A 直接出戏，自称“我还没有学会回答这个问题”，而回答 B 至少维持了第一人称角色口吻，但内容空泛、重复，既缺乏乔峰式的豪迈与江湖气，也没有真正回应身世与认同的冲突，所以两者都差，B 略好。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽未体现乔峰的口吻与豪气，但至少以第一人称切题回应；B 直接以 AI 助手口吻拒答，完全出戏。"
+      }
+    },
+    "qf-4": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 4,
+          "immersion": 4,
+          "quality": 4
+        },
+        "reason": "回答A直接以助手口吻拒绝回答，完全出戏；回答B保持乔峰身份并切题否认是人工智能，虽有措辞生硬之处但更符合角色扮演要求。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 基本维持乔峰身份并直接否认自己是人工智能，虽语气略显生硬；B 完全跳出角色并像通用助手一样拒答。"
+      }
+    },
+    "qf-5": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 3
+        },
+        "reason": "回答A通篇是官方宣传口吻，完全脱离乔峰的身份与语境；回答B虽然语言抽象，缺少乔峰豪迈直爽的口吻，但至少围绕“侠义”本身展开，没有大幅偏离角色定位。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A虽不够像乔峰且内容空泛，但仍围绕侠义作答；B完全跳脱角色，用官方套话回应，毫无乔峰气概。"
+      }
+    },
+    "lyl-1": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 2
+        },
+        "reason": "A 完全跑题，是官话套话，根本不是李云龙在说话；B 虽然缺少老李那股粗犷口癖，但至少是在以角色身份回答训练情况，没有出戏。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 2,
+          "immersion": 3,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A虽缺少李云龙的口癖和火爆脾气，但至少在以团长身份谈训练，B则完全变成政治套话、还第三人称提\"老李同志\"，彻底出戏。"
+      }
+    },
+    "lyl-2": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 2,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 2
+        },
+        "reason": "A 完全不像李云龙且空泛套话，B 虽简短但用了口语化称呼，相对更贴角色。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A虽口吻略不够李云龙，但仍在角色内并回应了问题；B完全出戏，变成政治套话，未以李云龙身份作答。"
+      }
+    },
+    "lyl-3": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 5,
+          "quality": 3
+        },
+        "reason": "A 满口“公司决定”“支持上级指示”，完全是职场腔，跟李云龙的粗豪、敢顶嘴的独立团团长形象毫不搭界，严重出戏；B 虽短，但那股“凭啥撤”的不服气劲儿贴近李云龙的口吻，只是内容略单薄。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 4,
+          "immersion": 5,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "A 简洁有李云龙不服输的劲头，B 完全出戏像公司汇报，毫无角色味道。"
+      }
+    },
+    "lyl-4": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 3
+        },
+        "reason": "A直接自称AI助手严重出戏，B保持人类身份且未跳出角色，虽李云龙口癖不够鲜明但明显更符合设定。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 5,
+          "quality": 3
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 2
+        },
+        "reason": "A 保持了角色内的人类身份并切题回应，虽缺少李云龙典型口癖；B 直接自称 AI 助手，严重出戏。"
+      }
+    },
+    "lyl-5": {
+      "order_ab": {
+        "winner": "B",
+        "a": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "b": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 2
+        },
+        "reason": "A 完全是 AI 式的拒绝回答，严重出戏；B 至少保持了口语化的粗犷腔调、没有跳出角色，但没有真正回答“图个啥”，内容空泛。"
+      },
+      "order_ba": {
+        "winner": "A",
+        "a": {
+          "consistency": 3,
+          "immersion": 4,
+          "quality": 2
+        },
+        "b": {
+          "consistency": 1,
+          "immersion": 1,
+          "quality": 1
+        },
+        "reason": "A 虽然答非所问、内容空泛，但简短粗犷的口气符合李云龙的感觉，且没有出戏；B 直接以'我还没有学会'的 AI 免责话术拒绝，完全跳出角色，两项沉浸指标均为最低。"
+      }
+    }
+  }
+}
