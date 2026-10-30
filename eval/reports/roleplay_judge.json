@@ -3,47 +3,43 @@
   "judge_model": "deepseek-flash",
   "base_model": "deepseek-r1:1.5b",
   "ft_model": "deepseek-r1-roleplay",
-  "wins": {
-    "base": 1,
-    "ft": 25,
-    "tie": 0,
-    "inconsistent": 4
+  "dim_avg": {
+    "base": {
+      "consistency": 1.08,
+      "immersion": 1.28,
+      "quality": 1.28
+    },
+    "ft": {
+      "consistency": 2.12,
+      "immersion": 3.22,
+      "quality": 2.22
+    }
   },
-  "win_rate_ft": 0.833,
-  "avg_scores": {
+  "overall": {
     "base": 1.22,
-    "ft": 2.52
+    "ft": 2.52,
+    "delta": 1.3
   },
   "by_type": {
     "chat": {
-      "base": 0,
-      "ft": 5,
-      "tie": 0,
-      "inconsistent": 1
+      "base": 1.14,
+      "ft": 2.75
     },
     "knowledge": {
-      "base": 0,
-      "ft": 5,
-      "tie": 0,
-      "inconsistent": 1
+      "base": 1.17,
+      "ft": 2.31
     },
     "emotion": {
-      "base": 0,
-      "ft": 6,
-      "tie": 0,
-      "inconsistent": 0
+      "base": 1.05,
+      "ft": 2.47
     },
     "ooc": {
-      "base": 0,
-      "ft": 4,
-      "tie": 0,
-      "inconsistent": 2
+      "base": 1.28,
+      "ft": 2.5
     },
     "values": {
-      "base": 1,
-      "ft": 5,
-      "tie": 0,
-      "inconsistent": 0
+      "base": 1.45,
+      "ft": 2.56
     }
   },
   "per_case": [
@@ -51,7 +47,6 @@
       "id": "wxb-1",
       "character": "韦小宝",
       "type": "chat",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -61,13 +56,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 1.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.17
     },
     {
       "id": "wxb-2",
       "character": "韦小宝",
       "type": "knowledge",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.5,
@@ -77,13 +73,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.17,
+      "ft_overall": 2.33
     },
     {
       "id": "wxb-3",
       "character": "韦小宝",
       "type": "emotion",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -93,13 +90,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 1.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.0
     },
     {
       "id": "wxb-4",
       "character": "韦小宝",
       "type": "ooc",
-      "winner": "inconsistent",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -109,13 +107,14 @@
         "consistency": 1.0,
         "immersion": 1.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.17,
+      "ft_overall": 1.33
     },
     {
       "id": "wxb-5",
       "character": "韦小宝",
       "type": "values",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -125,13 +124,14 @@
         "consistency": 2.0,
         "immersion": 3.5,
         "quality": 3.0
-      }
+      },
+      "base_overall": 1.17,
+      "ft_overall": 2.83
     },
     {
       "id": "hp-1",
       "character": "Harry Potter",
       "type": "chat",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.5,
@@ -141,13 +141,14 @@
         "consistency": 2.0,
         "immersion": 3.5,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.17,
+      "ft_overall": 2.5
     },
     {
       "id": "hp-2",
       "character": "Harry Potter",
       "type": "knowledge",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 2.0,
@@ -157,13 +158,14 @@
         "consistency": 1.5,
         "immersion": 1.5,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.33,
+      "ft_overall": 1.67
     },
     {
       "id": "hp-3",
       "character": "Harry Potter",
       "type": "emotion",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -173,13 +175,14 @@
         "consistency": 1.0,
         "immersion": 1.5,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 1.5
     },
     {
       "id": "hp-4",
       "character": "Harry Potter",
       "type": "ooc",
-      "winner": "inconsistent",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 2.0,
@@ -189,13 +192,14 @@
         "consistency": 1.0,
         "immersion": 1.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.33,
+      "ft_overall": 1.33
     },
     {
       "id": "hp-5",
       "character": "Harry Potter",
       "type": "values",
-      "winner": "base",
       "base_scores": {
         "consistency": 3.0,
         "immersion": 4.5,
@@ -205,13 +209,14 @@
         "consistency": 1.5,
         "immersion": 3.5,
         "quality": 2.0
-      }
+      },
+      "base_overall": 3.5,
+      "ft_overall": 2.33
     },
     {
       "id": "ayaka-1",
       "character": "神里绫华",
       "type": "chat",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -221,13 +226,14 @@
         "consistency": 3.0,
         "immersion": 5.0,
         "quality": 3.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 3.67
     },
     {
       "id": "ayaka-2",
       "character": "神里绫华",
       "type": "knowledge",
-      "winner": "inconsistent",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.5,
@@ -237,13 +243,14 @@
         "consistency": 1.0,
         "immersion": 2.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.33,
+      "ft_overall": 1.67
     },
     {
       "id": "ayaka-3",
       "character": "神里绫华",
       "type": "emotion",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -253,13 +260,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 1.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.17
     },
     {
       "id": "ayaka-4",
       "character": "神里绫华",
       "type": "ooc",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.5,
         "immersion": 1.0,
@@ -269,13 +277,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.5,
+      "ft_overall": 2.33
     },
     {
       "id": "ayaka-5",
       "character": "神里绫华",
       "type": "values",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -285,13 +294,14 @@
         "consistency": 1.5,
         "immersion": 2.0,
         "quality": 1.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 1.5
     },
     {
       "id": "txy-1",
       "character": "佟湘玉",
       "type": "chat",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 2.0,
@@ -301,13 +311,14 @@
         "consistency": 2.5,
         "immersion": 3.5,
         "quality": 3.0
-      }
+      },
+      "base_overall": 1.67,
+      "ft_overall": 3.0
     },
     {
       "id": "txy-2",
       "character": "佟湘玉",
       "type": "knowledge",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -317,13 +328,14 @@
         "consistency": 2.0,
         "immersion": 3.5,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.5
     },
     {
       "id": "txy-3",
       "character": "佟湘玉",
       "type": "emotion",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -333,13 +345,14 @@
         "consistency": 2.5,
         "immersion": 4.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.83
     },
     {
       "id": "txy-4",
       "character": "佟湘玉",
       "type": "ooc",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -349,13 +362,14 @@
         "consistency": 2.0,
         "immersion": 4.0,
         "quality": 2.5
-      }
+      },
+      "base_overall": 1.33,
+      "ft_overall": 2.83
     },
     {
       "id": "txy-5",
       "character": "佟湘玉",
       "type": "values",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -365,13 +379,14 @@
         "consistency": 2.5,
         "immersion": 4.0,
         "quality": 3.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 3.17
     },
     {
       "id": "qf-1",
       "character": "乔峰",
       "type": "chat",
-      "winner": "inconsistent",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -381,13 +396,14 @@
         "consistency": 2.5,
         "immersion": 4.0,
         "quality": 1.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.67
     },
     {
       "id": "qf-2",
       "character": "乔峰",
       "type": "knowledge",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -397,13 +413,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 2.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.5
     },
     {
       "id": "qf-3",
       "character": "乔峰",
       "type": "emotion",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -413,13 +430,14 @@
         "consistency": 2.0,
         "immersion": 3.5,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.5
     },
     {
       "id": "qf-4",
       "character": "乔峰",
       "type": "ooc",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -429,13 +447,14 @@
         "consistency": 3.5,
         "immersion": 4.0,
         "quality": 3.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 3.67
     },
     {
       "id": "qf-5",
       "character": "乔峰",
       "type": "values",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -445,13 +464,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 2.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.5
     },
     {
       "id": "lyl-1",
       "character": "李云龙",
       "type": "chat",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -461,13 +481,14 @@
         "consistency": 2.0,
         "immersion": 3.0,
         "quality": 2.5
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 2.5
     },
     {
       "id": "lyl-2",
       "character": "李云龙",
       "type": "knowledge",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.5,
@@ -477,13 +498,14 @@
         "consistency": 3.0,
         "immersion": 4.0,
         "quality": 2.5
-      }
+      },
+      "base_overall": 1.17,
+      "ft_overall": 3.17
     },
     {
       "id": "lyl-3",
       "character": "李云龙",
       "type": "emotion",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -493,13 +515,14 @@
         "consistency": 3.5,
         "immersion": 5.0,
         "quality": 3.0
-      }
+      },
+      "base_overall": 1.33,
+      "ft_overall": 3.83
     },
     {
       "id": "lyl-4",
       "character": "李云龙",
       "type": "ooc",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -509,13 +532,14 @@
         "consistency": 3.0,
         "immersion": 4.5,
         "quality": 3.0
-      }
+      },
+      "base_overall": 1.33,
+      "ft_overall": 3.5
     },
     {
       "id": "lyl-5",
       "character": "李云龙",
       "type": "values",
-      "winner": "ft",
       "base_scores": {
         "consistency": 1.0,
         "immersion": 1.0,
@@ -525,7 +549,9 @@
         "consistency": 3.0,
         "immersion": 4.0,
         "quality": 2.0
-      }
+      },
+      "base_overall": 1.0,
+      "ft_overall": 3.0
     }
   ]
 }
